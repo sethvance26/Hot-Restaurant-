@@ -27,8 +27,8 @@ const customers = [
 app.get('/', (req, res) => {
 console.log(__dirname);
  res.sendFile(path.join(__dirname, 'home.html'));
- 
-app.get('/add', (req, res) => 
+});
+app.get('/add', (req, res) =>
 res.sendFile(path.join(__dirname, 'add.html')));
 
 app.get('/tables', (req, res) => 
@@ -61,4 +61,5 @@ app.post('/api/customers', (req, res) => {
     customers.push(newCustomer);
     res.json(newCustomer);
 });
-app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`))});
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+console.log('running');
