@@ -45,4 +45,14 @@ app.get('/api/customers/:customer', (req, res) => {
     }
     return res.json(false)
 });
+
+app.post('/api/customers', (req, res) => {
+    const newCustomer = req.body;
+
+    newCustomer.routeName = newCustomer.email.replace(/\s+/g, '').toLowerCase();
+    console.log(newCustomer);
+
+    customers.push(newCustomer);
+    res.json(newCustomer);
+});
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`))});
