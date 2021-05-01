@@ -28,11 +28,11 @@ app.get('/', (req, res) => {
 console.log(__dirname);
  res.sendFile(path.join(__dirname, 'home.html'));
 });
-app.get('/add', (req, res) =>
-res.sendFile(path.join(__dirname, 'add.html')));
+app.get('/reserve', (req, res) =>
+res.sendFile(path.join(__dirname, 'reserve.html')));
 
 app.get('/tables', (req, res) => 
-res.sendFile(path/join(__dirname, 'tables.html')));
+res.sendFile(path.join(__dirname, 'tables.html')));
 
 app.get('/api/waitlist', (req, res) =>
 res.json(customers));
