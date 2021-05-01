@@ -62,4 +62,3 @@ app.post('/api/customers', (req, res) => {
     res.json(newCustomer);
 });
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
-console.log('running');
