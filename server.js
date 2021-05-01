@@ -21,13 +21,28 @@ const customers = [
         id: 394871,
         email: 'bob@gmail.com',
         phone: '8045021'
-    }
+    },
 ];
 
 app.get('/', (req, res) => {
 console.log(__dirname);
  res.sendFile(path.join(__dirname, 'home.html'));
  
-});
+app.get('/add', (req, res) => 
+res.sendFile(path.join(__dirname, 'add.html')));
 
-app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
+app.get('/api/customers', (req, res) => res.json(customers));
+
+app.get('/api/customers/:customer', (req, res) => {
+    const chosen = req.params.customer;
+
+    console.log(chosen);
+
+    for (let i = 0; i < customers.length; i++) {
+        if (chosen === customers[i].routeName) {
+            return res.json(customers[i]);
+        }
+    }
+    return res.json(false)
+});
+app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`))});
