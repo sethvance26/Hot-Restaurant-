@@ -34,12 +34,12 @@ res.sendFile(path.join(__dirname, 'reserve.html')));
 app.get('/tables', (req, res) => 
 res.sendFile(path.join(__dirname, 'tables.html')));
 
-app.get('/api/waitlist', (req, res) =>
+app.post('/api/waitlist', (req, res) =>
 res.json(customers));
 
-app.get('/api/customers', (req, res) => res.json(customers));
+app.post('/api/customers', (req, res) => res.json(customers));
 
-app.get('/api/customers/:customer', (req, res) => {
+app.post('/api/customers/:customer', (req, res) => {
     const chosen = req.params.customer;
 
     console.log(chosen);
