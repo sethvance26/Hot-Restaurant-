@@ -31,6 +31,12 @@ console.log(__dirname);
 app.get('/add', (req, res) => 
 res.sendFile(path.join(__dirname, 'add.html')));
 
+app.get('/tables', (req, res) => 
+res.sendFile(path/join(__dirname, 'tables.html')));
+
+app.get('/api/waitlist', (req, res) =>
+res.json(customers));
+
 app.get('/api/customers', (req, res) => res.json(customers));
 
 app.get('/api/customers/:customer', (req, res) => {
